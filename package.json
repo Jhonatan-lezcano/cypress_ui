@@ -1,0 +1,12 @@
+{
+  "name": "cypress_ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.6.0"
+  }
+}
