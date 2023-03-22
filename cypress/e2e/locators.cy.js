@@ -38,7 +38,7 @@ describe("Tipos de localizadores", () => {
 
   it("Usando contains", () => {
     cy.contains("Reading");
-    //obtiene los elementos con el texto "Reading"
+    //obtiene los elementos con el contenido "Reading"
     cy.contains(".header-wrapper", "Widgets");
     //Obtiene los elementos con class igual .header-wrapper y que contengan el texto "Widgets"
   });
