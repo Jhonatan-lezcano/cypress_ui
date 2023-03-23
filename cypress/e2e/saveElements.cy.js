@@ -1,10 +1,4 @@
 describe("Guardando elementos", () => {
-  Cypress.on("uncaught:exception", (err, runnable) => {
-    // returning false here prevents Cypress from
-    // failing the test
-    return false;
-  });
-
   it("Repetición", () => {
     cy.visit("/automation-practice-form");
     //Obteniendo el elemento padre
@@ -40,6 +34,8 @@ describe("Guardando elementos", () => {
         cy.wrap(inputs).should("have.length", 15);
         expect(divs.length).to.equal(70);
         expect(labels.length).to.equal(16);
+
+        cy.task("log", inputs.length);
       });
     cy.get("form").find("label");
   });

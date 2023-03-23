@@ -1,18 +1,11 @@
-describe("Aserciones", () => {
-  Cypress.on("uncaught:exception", (err, runnable) => {
-    // returning false here prevents Cypress from
-    // failing the test
-    return false;
-  });
+/// <reference types="cypress" />
 
+describe("Aserciones", () => {
   beforeEach(() => {
     cy.visit("/automation-practice-form");
-    //El beforeEach ejecuta una instrucción para cata test, en este caso esta ejecutando la navegación
-    //a la pagina en la que se van a hacer los tests
   });
 
   it("Asercion 1", () => {
-    cy.visit("/automation-practice-form");
     //valida que la url incluya "demoqa.com", esto nos ayuda a verificar que estamos en la pagina
     //correcta
     cy.url().should("include", "demoqa.com");
