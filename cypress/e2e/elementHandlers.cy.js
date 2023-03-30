@@ -26,11 +26,18 @@ describe("Interactuar con los elementos", () => {
       .and("contain", "You have done a right click");
   });
 
-  it.only("Input type text", () => {
+  it("Input type text", () => {
     cy.visit("/automation-practice-form");
     cy.get("#firstName").type("jhonatan");
     cy.get("#lastName").type("Lezcano");
     cy.get("#userEmail").type("jhonatanlezcano.plv@gmail.com");
+    cy.get("#firstName").type("{selectAll}{backspace}");
     cy.get("#firstName").clear().type("Yeison");
+  });
+
+  it.only("Checkboxes and radio buttons", () => {
+    cy.visit("/automation-practice-form");
+    cy.get('label[for="gender-radio-1"]').click();
+    cy.get('label[for="hobbies-checkbox-1"]').click();
   });
 });
