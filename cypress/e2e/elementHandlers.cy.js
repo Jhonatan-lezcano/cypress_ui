@@ -35,9 +35,22 @@ describe("Interactuar con los elementos", () => {
     cy.get("#firstName").clear().type("Yeison");
   });
 
-  it.only("Checkboxes and radio buttons", () => {
+  it("Checkboxes and radio buttons", () => {
     cy.visit("/automation-practice-form");
     cy.get('label[for="gender-radio-1"]').click();
     cy.get('label[for="hobbies-checkbox-1"]').click();
+  });
+
+  it.only("Extrayendo info", function () {
+    cy.visit("/automation-practice-form");
+    cy.get("#firstName").as("name");
+    cy.get("@name").type("Jhonatan");
+    cy.get("@name").invoke("val").as("globalName");
+  });
+
+  it.only("Compartir info", function () {
+    cy.visit("/automation-practice-form");
+    cy.get("#lastName").as("name2");
+    cy.get("@name2").type(this.globalName);
   });
 });
